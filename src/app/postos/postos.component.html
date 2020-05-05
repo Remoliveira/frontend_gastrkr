@@ -1,0 +1,107 @@
+<main role="main" >
+
+    <section class="jumbotron text-center">
+      <div class="container">
+          <div class="img">       
+              <img  [src]="'assets/gastracker.png'" class="img-fluid" alt="Responsive image" style="width: 8cm;">
+          </div>
+        <p class="lead text-muted">Lista dos postos de gasolina mais próximos da redondeza. </p>
+      </div>
+    </section>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+
+        <div class="row">
+         
+          <div class="col-md-4" *ngFor="let posto of postos" style="width: 18rem;">
+            <div class="card mb-4 shadow-sm">
+              <img class="card-img-top" data-src="{{posto.imagemUrl}}" alt="Card image cap">
+              <div class="card-body">
+                <h5 class="card-title">{{posto.nome_posto}}</h5>
+                <p class="card-text">Endereço: {{posto.endereco}}</p>
+                <p class="card-text">Preço: {{posto.preco}}</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" (click)="levarComentario(posto)" >Mais informações</button>
+                  </div>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal" (click)="salvarIdPosto(posto)">Comentar</button>
+                  </div>
+                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                      <div class="modal-content">
+                        <div class="modal-header">
+                          <h5 class="modal-title" id="exampleModalLabel">Realize seus comentários</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                          </button>
+                        </div>
+                        <div class="modal-body">
+                          <form>
+                            <div class="form-group">
+                              <label for="exampleInputEmail1">Id Usuario</label>
+                              <input type="email" class="form-control"  [(ngModel)]="novoAvalia.usuario_idusuario" name = "usuario_idusuario">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Cometario</label>
+                              <input type="email" class="form-control" [(ngModel)]="novoAvalia.comentario" name = "comentario"> 
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Nota</label>
+                              <input type="email" class="form-control" [(ngModel)]="novoAvalia.nota" name = "nota">
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Sugestão</label>
+                              <input type="email" class="form-control" [(ngModel)]="novoAvalia.sugestao" name = "sugestao" >
+                            </div>
+                            <div class="form-group">
+                              <label for="exampleInputPassword1">Preço Atual</label>
+                              <input type="email" class="form-control" [(ngModel)]="novoAvalia.preco_atual" name = "preco_atual">
+                            </div>
+                            
+                          </form>
+                        </div>
+                        <div class="modal-footer">
+                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                          <button type="button" class="btn btn-primary" (click)="ok()" (click)="salvarBanco()" data-dismiss="modal">Salvar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+              </div>
+            </div>        
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+
+<div class="mx-auto" style="width: 1110px;">
+  <table  class="table  " *ngIf = "avaliacoes.length > 0; else elseBlock" >
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Id Usuario</th>
+          <th scope="col">Comentário</th>
+          <th scope="col">Nota</th>
+          <th scope="col">Sugestão</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor  = "let avaliacao of avaliacoes">
+          <th scope="row">{{avaliacao.usuario_idusuario}}</th>
+          <td >{{avaliacao.comentario}}</td>
+          <td>{{avaliacao.nota}}</td>
+          <td>{{avaliacao.sugestao}}</td>
+        </tr>
+    </table>
+    <ng-template #elseBlock><h3>Sem comentários disponíveis</h3></ng-template>
+</div>
+
+
+
+

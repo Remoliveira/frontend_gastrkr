@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="home">GasTracker</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="postos">Postos</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Entrar
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="login">Login</a>
+                <a class="dropdown-item" href="registrar">Criar conta</a>
+              </div>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0" >
+            <a class="nav-link" href="login"  style = color:white >Login</a>
+            <a class="nav-link" href="registrar"  style = color:white >Registrar</a>
+          </form>
+          
+        </div>
+ </nav>
+<router-outlet></router-outlet>
+<footer class="container py-5" style="margin-top: 200px;">
+    <div class="row">
+      <div class="col-12 col-md">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="d-block mb-2" role="img" viewBox="0 0 24 24" focusable="false"><title>Product</title><circle cx="12" cy="12" r="10"/><path d="M14.31 8l5.74 9.94M9.69 8h11.48M7.38 12l5.74-9.94M9.69 16L3.95 6.06M14.31 16H2.83m13.79-4l-5.74 9.94"/></svg>
+        <small class="d-block mb-3 text-muted">&copy; 2019- Desenvolvido por Remo de Oliveira Gresta para a disciplina Tecnologias Web.</small>
+      </div>
+  
+      <div class="col-6 col-md">
+        <h5>Tecnologias</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Angular</a></li>
+          <li><a class="text-muted" href="#">Bootstrap</a></li>
+   </ul>
+      </div>
+   
+      <div class="col-6 col-md">
+        <h5>Sobre</h5>
+        <ul class="list-unstyled text-small">
+          <li><a class="text-muted" href="#">Equipe</a></li>
+          
+        </ul>
+      </div>
+    </div>
+  </footer>
+

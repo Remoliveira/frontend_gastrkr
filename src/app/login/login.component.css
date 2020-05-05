@@ -1,0 +1,20 @@
+.mx-auto{
+    padding-top: 50px;
+
+}
+.img{
+    
+    text-align: center;
+    padding-top: 15px;
+}
+
+.btn{
+    width:100px;
+    height:50px;
+    position:absolute;
+    top:75%;
+    left:50%;
+    margin-top:-50px;
+    margin-left:-50px;
+    
+}

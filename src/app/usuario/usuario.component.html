@@ -1,0 +1,41 @@
+<div class="img">       
+    <img class = "pos" [src]="'assets/gastracker.png'" class="img-fluid" alt="Responsive image" style="width: 8cm;">
+</div>
+<form class="mx-auto" style="width: 600px;">
+    <div class="form-row">
+        <div class="col">
+            <label>Nome</label>
+            <input type="text" class="form-control"  [(ngModel)]="novoUsuario.nome" name = "nome">
+        </div>
+        <div class="col">
+                <label>Sobrenome</label>
+            <input type="text" class="form-control"[(ngModel)]="novoUsuario.sobrenome" name = "sobrenome">
+        </div>
+    </div>
+    <div class="form-group" style = "padding-top: 10px;">
+        <label for="inputAddress">Cpf</label>
+        <input type="text" class="form-control" id="inputCpf" [(ngModel)]="novoUsuario.cpf" name = "cpf">
+    </div>
+    <div class="form-group">
+        <label for="inputAddress">E-mail</label>
+        <input type="text" class="form-control" id="inputAddress" placeholder="seunome@email" [(ngModel)]="novoUsuario.eMail" name = "email">
+     </div>
+     <div class="form-group">
+        <label for="inputAddress">Senha</label>
+        <input type="text" class="form-control" id="inputSenha" [(ngModel)]="novoUsuario.senha" name = "senha">
+     </div>
+
+     <button type="submit" class="btn btn-primary" (click)="criarUsuario()">Registrar</button>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
